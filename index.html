@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    
+        <div class="header">
+            <div class="main-logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+            <div class="nav"> 
+                <a href="men.html" class="navlink">MEN</a>
+                <a href="men.html"  class="navlink">WOMEN</a>
+                <a href="men.html" class="navlink">KIDS</a>
+                <a href="cart.html" class="navlink">CART</a>
+                <a href="login.html" class="navlink">LOGIN</a> 
+            </div>
+            <div class="search">
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Name" required="">
+                    <label for="name" class="form__label">Search</label>
+                </div>
+            
+        </div>
+
+        </div>
+        <div class="underline"></div>
+   <div class="front-page">
+    <div class="container">
+      
+        <h2 class="typing">One Step Ahead.</h2>
+
+
+      </div>
+    <div class="model">
+       <img src="images/lebron-9-low-shoes-fq48nG 1.png" alt="" class="hello">
+    </div>
+
+   </div>
+   <div class="lastetdeal">
+   <div class="deals">
+    <p class="glow-text">latest Deals</p>
+   </div>
+   <div class="body2">
+   <div class="container2">
+    <div class="imgBx">
+      <img src="images/jordan_proto.png" alt="Nike Jordan Proto-Lyte Image">
+    </div>
+    <div class="details">
+      <div class="content">
+        <h2>Jordan Proto-Lyte <br>
+          <span>Running Collection</span>
+        </h2>
+        <p>
+          Featuring soft foam cushioning and lightweight, woven fabric in the upper, the Jordan Proto-Lyte is
+          made for all-day, bouncy comfort.
+          Lightweight Breathability: Lightweight woven fabric with real or synthetic leather provides
+          breathable support.
+          Cushioned Comfort: A full-length foam midsole delivers lightweight, plush cushioning.
+          Secure Traction: Exaggerated herringbone-pattern outsole offers traction on a variety of surfaces.
+        </p>
+        <p class="product-colors">Available Colors:
+          <span class="black active" data-color-primary="#000" data-color-sec="#212121" data-pic="images/jordan_proto.png"></span>
+          <span class="red" data-color-primary="#7E021C" data-color-sec="#bd072d" data-pic="images\jordan_proto_red_black.png"></span>
+          <span class="orange" data-color-primary="#CE5B39" data-color-sec="#F18557" data-pic="images\jordan_proto_orange_black.png"></span>
+        </p>
+        <h3>Rs. 12,800</h3>
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="social-links-container">
+    <ul class="social-links-list">
+      <li><a href="htt">Reviews</a></li>
+      <li><a href="ht">Exclusive</a></li>
+      <li><a href="">Contact Us</a></li>
+      <li><a href="http">About Us</a></li>
+      <li><a href="ht">Privacy Policy</a></li>
+      <li class="wave-emoji"><p>👋</p></li>
+    </ul>
+  </div>
+   </div>
+   
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(".product-colors span").click(function () {
+      $(".product-colors span").removeClass("active");
+      $(this).addClass("active");
+      $(".active").css("border-color", $(this).attr("data-color-sec"));
+      $(".body2").css("background", $(this).attr("data-color-primary"));
+      $(".lastetdeal").css("background", $(this).attr("data-color-primary"));
+      $(".content h2").css("color", $(this).attr("data-color-sec"));
+      $(".content h3").css("color", $(this).attr("data-color-sec"));
+      $(".container2 .imgBx").css("background", $(this).attr("data-color-sec"));
+      $(".container2 .details button").css("background", $(this).attr("data-color-sec"));
+      $(".imgBx img").attr('src', $(this).attr("data-pic"));
+    });
+  </script>
+  
+  
+   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</body>
+</html>

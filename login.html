@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+	<!-- Ionicons CDN -->
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <style>
+        
+		.neu-form {
+  padding: 16px;
+  width: 320px; /* 16 * 20 */
+  margin: 0 auto;
+}
+
+.neu-segment {
+  padding: 32px 0; /* 16 * 2 */
+  text-align: center;
+}
+
+.neu-label {
+  display: block;
+  margin-bottom: 24px; /* 16 * 1.5 */
+  width: 100%;
+}
+
+.neu-input {
+  margin-right: 8px; /* 16 / 2 */
+  box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 320px; /* 16 * 20 */
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  background-color: #EBECF0;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.neu-input:focus {
+  box-shadow: inset 1px 1px 2px #1BBFE9, inset -1px -1px 2px #1BBFE9;
+}
+
+.neu-button {
+  color: #61677C;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 320px;
+  background-color: #EBECF0;
+  border: 0;
+  outline: 0;
+  display: inline-block;
+}
+
+.neu-button:hover {
+  box-shadow: -2px -2px 5px #1BBFE9, 2px 2px 5px #1BBFE9;
+  
+}
+
+.neu-button:active {
+  box-shadow: inset 1px 1px 2px #1BBFE9, inset -1px -1px 2px #1BBFE9;;
+}
+
+.neu-button.unit {
+  border-radius: 8px; /* 16 / 2 */
+  line-height: 0;
+  width: 48px; /* 16 * 3 */
+  height: 48px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 8px;
+  font-size: 19.2px; /* 16 * 1.2 */
+}
+
+.neu-button.red {
+  display: block;
+  width: 100%;
+  color: #1BBFE9;
+}
+
+.neu-input-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.neu-input-group .neu-label {
+  margin: 0;
+  flex: 1;
+}
+.log{
+	background-color:#EBECF0;
+    height: 100vh;
+}
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="main-logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+        <div class="nav"> 
+            <a href="men.html" class="navlink">MEN</a>
+            <a href=""  class="navlink">WOMEN</a>
+            <a href="" class="navlink">KIDS</a>
+			<a href="cart.html" class="navlink">CART</a>
+            <a href="login.html" class="navlink">LOGIN</a> 
+        </div>
+        <div class="search"> 
+            <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Name" required="">
+                <label for="name" class="form__label">Search</label>
+            </div>
+        
+    </div>
+
+    </div>
+    <div class="underline"></div>
+
+<div class="log">
+	<form class="neu-form">
+		<div class="neu-segment">
+		  <h1>Sign up</h1>
+		</div>
+	  
+		<label class="neu-label">
+		  <input class="neu-input" type="text" placeholder="Email Address" />
+		</label>
+		<label class="neu-label">
+		  <input class="neu-input" type="password" placeholder="Password" />
+		</label>
+		<button class="neu-button red" type="button" onclick="window.location.href='index.html'"><i class="icon ion-md-lock"></i> Log in</button>
+	  
+		<div class="neu-segment">
+		  <button class="neu-button unit" type="button"><i class="icon ion-md-arrow-back"></i></button>
+		  <button class="neu-button unit" type="button"><i class="icon ion-md-bookmark"></i></button>
+		  <button class="neu-button unit" type="button"><i class="icon ion-md-settings"></i></button>
+		</div>
+	  
+	
+	  </form>
+	  
+</div>
+
+
+
+</body>
+</html>

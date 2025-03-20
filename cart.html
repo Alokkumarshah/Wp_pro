@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .cart-container {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-bottom: 1px solid #333;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .cart-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      margin-right: 1rem;
+      border-radius: 6px;
+    }
+    .item-details {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .item-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-item button {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .cart-item button:hover {
+      background-color: #e60000;
+    }
+    .total {
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-align: right;
+      margin-top: 2rem;
+    }
+    .empty-cart {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-top: 2rem;
+      opacity: 0.8;
+    }
+    .clear-btn {
+      margin-top: 1rem;
+      background-color: #444;
+      padding: 8px 16px;
+      border-radius: 4px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      float: right;
+    }
+    .clear-btn:hover {
+      background-color: #666;
+    }
+  
+  </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="main-logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+        <div class="nav"> 
+            <a href="men.html" class="navlink">MEN</a>
+            <a href=""  class="navlink">WOMEN</a>
+            <a href="" class="navlink">KIDS</a>
+            <a href="cart.html" class="navlink">CART</a>
+            <a href="login.html" class="navlink">LOGIN</a> 
+        </div>
+        <div class="search"> 
+            <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Name" required="">
+                <label for="name" class="form__label">Search</label>
+            </div>
+        
+    </div>
+
+    </div>
+    <div class="underline"></div>
+  <!-- Cart Content -->
+  <div class="cart-container">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div class="total" id="total-price"></div>
+    <button class="clear-btn" onclick="clearCart()">Proceed To Payment</button>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartContainer = document.getElementById("cart-items");
+    const totalPrice = document.getElementById("total-price");
+
+    function updateCartUI() {
+      cartContainer.innerHTML = "";
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = "<p class='empty-cart'>🛒 Your cart is empty.</p>";
+        totalPrice.textContent = "";
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "cart-item";
+
+        itemDiv.innerHTML = `
+          <div class="item-details">
+            ${item.image ? `<img src="${item.image}" alt="${item.name}">` : ""}
+            <div class="item-info">
+              <span><strong>${item.name}</strong></span>
+              <span>Quantity: ${item.quantity}</span>
+            </div>
+          </div>
+          <span>₹${(item.price * item.quantity).toFixed(2)}</span>
+          <button onclick="removeItem(${index})">Remove</button>
+        `;
+
+        total += item.price * item.quantity;
+        cartContainer.appendChild(itemDiv);
+      });
+
+      totalPrice.textContent = `Total: ₹${total.toFixed(2)}`;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    function clearCart() {
+      localStorage.removeItem("cart");
+      cart = [];
+      alert("Purchase Succesfull")
+    }
+
+    // Initial render
+    updateCartUI();
+  </script>
+
+</body>
+</html>
